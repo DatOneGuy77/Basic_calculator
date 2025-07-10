@@ -2,8 +2,8 @@
 Erick Gonzalez Cruz
 Started: 7/2/2025
 File: A simple calculator!
+Completed: 7/9/2025
 """
-
 
 #Well first of all think of what a calculator needs! 
 """
@@ -44,12 +44,6 @@ class Calculator:
     def division(self, num_1, num_2):
         return num_1 // num_2
     
-"""
-To get this shi work:
-1. I need to make action for first and second number (Seperate!), 
-Like ask first number then the second 
-2. Ask the user the type of action they want to do!!!
-"""
 
 if __name__ == "__main__":
     Calc = Calculator(1, 2)
@@ -58,17 +52,25 @@ if __name__ == "__main__":
     print("This is a basic calculator app")
     print("-" * 75)
 
+    #store the value of the number that was asked in class User
     num_1 = Player.action_1()
     num_2 = Player.action_2()
 
-    # Calc.addition(num_1, num_2)
-    print(Calc.addition(num_1, num_2))
-    
+    #Making sure user only puts the options I gave them
+    print("Options are: +, -, //, *")
+    chose_operation = input("What type of arithmetic operation would you like: ")
 
+    #Storing each individual operation in seperate outcome
+    if chose_operation == "+":
+        sum_result = Calc.addition(num_1, num_2)
+        print(f"The result is: {sum_result}")
+    elif chose_operation == "-":
+        subtract_result = Calc.subtraction(num_1, num_2)
+        print(f"The result is: {subtract_result}")
+    elif chose_operation == "//":
+        divide_result = Calc.division(num_1, num_2)
+        print(f"The result is: {divide_result}")
+    elif chose_operation == "*":
+        multiplied_result = Calc.multiplication(num_1, num_2)
+        print(f"The result is: {multiplied_result}")
 
-"""
-Enter your first number: ___
-Enter your second number: ___
-What type of action do you want to do? _(+, -, *, //)___
-Here is the result: _result_
-"""
